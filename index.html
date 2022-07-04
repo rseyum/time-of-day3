@@ -93,7 +93,8 @@
 		</p>
 		<p>The FOOTER includes a clear:both to keep everything above it!</p>
 		<img
-			src="http://dummyimage.com/300x400"
+		    id="pic"
+			src="images/afternoon.jpg"
 			alt="Time of Day Image"
 			class="flexible"
 		/>
@@ -113,24 +114,33 @@
 		let myHour = myDate.getHours();
 		let myGreeting = "";
 		let myColor = "";
+		let myPic=""
 		//REMOVE THE FOLLOWING LINE
 		if (myHour < 12) {
 			//morning
 			// alert("Good Morning!");
 			myGreeting = "Good Morning!";
 			myColor = "orange";
+			myPic="morning.jpg";
 		} else {
 			//aftrnoon
 			//alert("Good Afternoon!");
 			myGreeting = "Good Afternoon!";
 			myColor = "yellow";
+			myPic="afternoon.jpg";
 		}
+
+
+
+		myPic="images/ + myPic";
+		alert(myPic);
 
 		//alert(myCopyright);
 		//console.log(myCopyright);
 		document.getElementById("copyright").innerHTML = myCopyright;
 		document.getElementById("greeting").innerHTML = myGreeting;
 		document.querySelector("html").style.backgroundColor = myColor;
+		document.getElementById("pic").src=myPic;
 
 		//https://tinyurl.com/dynamic-html-checker
 		document
